@@ -94,12 +94,14 @@ var wordsUnique = [
   'bring'
 ];
 
-function uniqueArray(arreglo){
+function uniquifyArray(arreglo){
   var nuevoArreglo = []
   for(var palabra of arreglo){
     if(nuevoArreglo.indexOf(palabra)=== -1) nuevoArreglo.push(palabra)
-}
+  }
+  if(nuevoArreglo === [])return 
   return nuevoArreglo
+  //En repl si funciona pero en Jasmine sigue arrojando un error
 }
 
 // Finding Elements
@@ -118,9 +120,10 @@ function doesWordExist(arreglo){
   var palabraBuscar = prompt('Ingresa la palabra que quieres buscar')
   var estaLaPalabra = false
   for(var palabra of arreglo){
-    if(palabra === palabraBuscar){return estaLaPalabra = true}
+    if(palabra === palabraBuscar) estaLaPalabra = true
   }
   return estaLaPalabra
+  //En repl si funciona pero en Jasmine sigue arrojando un error
 }
 
 // Counting Repetion
@@ -145,6 +148,7 @@ function howManyTimes(arreglo){
     if(palabra === palabraBuscar) contador++
   }
   return contador
+  //En repl si funciona pero en Jasmine sigue arrojando un error
 }
 // Bonus Quest
 
