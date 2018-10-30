@@ -1,5 +1,10 @@
 // Find the maximum
 
+function maxOfTwoNumbers (num1,num2){
+  if(num1 > num2) return num1
+  else return num2
+}
+
 // Finding Longest Word
 var words = [
   'mystery',
@@ -10,14 +15,43 @@ var words = [
   'orchard',
   'crackpot'
 ];
+function findLongestWord(x){
+
+  var maximo = x[0] //mystery
+  
+    x.forEach(
+      function(elemento){
+        if(maximo.length < elemento.length) return maximo = elemento
+      }
+    )
+  return maximo
+  }
 
 // Calculating a Sum
 
 var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+function sumArray(arreglo){
+  var suma = 0
+  for(var pos = 0; pos < arreglo.length; pos++ ){
+     suma += arreglo[pos] 
+   }
+   return suma
+ }
+
 // Calculate the Average
 
 var numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+
+function averageNumbers(arreglo){
+  var suma = 0
+  for(var pos = 0; pos < arreglo.length; pos++ ){
+     suma += arreglo[pos] 
+   }
+   if(arreglo.length > 0 ) return suma/arreglo.length
+
+   else return
+}
 
 // Array of Strings
 var wordsArr = [
@@ -32,6 +66,18 @@ var wordsArr = [
   'fuel',
   'palace'
 ];
+
+function averageWordLength(arreglo){
+  var longitud = 0;
+  arreglo.forEach(
+    function(palabra){
+      longitud += palabra.length
+    }
+  )
+  if(arreglo.length > 0 ) return longitud/arreglo.length
+  else return
+}
+
 
 // Unique Arrays
 var wordsUnique = [
@@ -48,6 +94,14 @@ var wordsUnique = [
   'bring'
 ];
 
+function uniqueArray(arreglo){
+  var nuevoArreglo = []
+  for(var palabra of arreglo){
+    if(nuevoArreglo.indexOf(palabra)=== -1) nuevoArreglo.push(palabra)
+}
+  return nuevoArreglo
+}
+
 // Finding Elements
 var wordsFind = [
   'machine',
@@ -59,6 +113,15 @@ var wordsFind = [
   'truth',
   'disobedience'
 ];
+
+function doesWordExist(arreglo){
+  var palabraBuscar = prompt('Ingresa la palabra que quieres buscar')
+  var estaLaPalabra = false
+  for(var palabra of arreglo){
+    if(palabra === palabraBuscar){return estaLaPalabra = true}
+  }
+  return estaLaPalabra
+}
 
 // Counting Repetion
 var wordsCount = [
@@ -74,6 +137,15 @@ var wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes(arreglo){
+  var palabraBuscar = prompt('Ingresa la palabra que quieres contar')
+  var contador = 0
+  for(var palabra of arreglo){
+    if(palabra === palabraBuscar) contador++
+  }
+  return contador
+}
 // Bonus Quest
 
 var matrix = [
@@ -98,3 +170,13 @@ var matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+function greatestProduct(){
+  var renglon, columna, maximo, maximoTemporal;
+  for(renglon = 0; renglon < 20; renglon++){
+    for(columna = 0; columna < 20; columna ++){
+      maximoTemporal = matrix[renglon][columna]*matrix[renglon+1][columna]*matrix[renglon+2][columna]*matrix[renglon+3][columna]
+      if(maximoTemporal > maximo) maximo = maximoTemporal
+    }
+  }
+}
